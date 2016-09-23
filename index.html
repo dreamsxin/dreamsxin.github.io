@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>audio.js</title>
+    <script src="./audiojs/audio.min.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./includes/index.css" media="screen">
+    <script>
+      audiojs.events.ready(function() {
+        audiojs.createAll();
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>芽芽媽媽講故事</h1>
+    </header>
+
+	<div class="container">
+		<table class="table">
+			<thead class="thead-inverse">
+				<tr>
+					<th>#</th>
+					<th>故事</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+				<td>搖籃曲</td>
+				<td>
+					<audio src="https://github.com/dreamsxin/Budbud/blob/master/%E8%8A%BD%E8%8A%BD%E5%AA%BD%E5%AA%BD%E8%AC%9B%E6%95%85%E4%BA%8B/%E6%91%87%E7%AF%AE%E6%9B%B2.m4a?raw=true" preload="auto"></audio>
+				</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+    <footer>
+		<p>This site is ©copyright <a href="http://myleftstudio.com">Myleft Studio</a>, 2016.</p>
+    </footer>
+  </body>
+</html>
