@@ -1,0 +1,7 @@
+.*
+*~
+*_
+*.local.php
+*.log
+*.db
+*Thumbs.db:encryptable
