@@ -30,7 +30,7 @@ class FileGenerator
         foreach ($iterator as $item) {
 
             if ($item->getExtension() == 'm4a') {
-				$this->files[] = $item;
+				$this->files[$item->getPathname()] = $item;
             }
         }
     }
@@ -47,6 +47,7 @@ class FileGenerator
 $api = new FileGenerator(CPHALCON_DIR);
 
 $files = $api->getFiles();
+ksort($files);
 
 @unlink('index.html');
 $html = <<<HTML
