@@ -77,6 +77,7 @@ $html = <<<HTML
 HTML;
 file_put_contents('index.html', $html.PHP_EOL, FILE_APPEND);
 $last_dirname = '';
+$i = 0;
 foreach ($files as $file)
 {
 	$filename = $file->getFilename();
@@ -84,6 +85,7 @@ foreach ($files as $file)
 	$path_parts = pathinfo($path);
 	$dirname = isset($path_parts['dirname']) ? $path_parts['dirname'] : '';
 	if ($last_dirname != $dirname) {
+		$i = 0;
 		if (!empty($last_dirname)) {
 			$html = <<<HTML
 				</tbody>
@@ -107,10 +109,11 @@ HTML;
 		file_put_contents('index.html', $html.PHP_EOL, FILE_APPEND);
 		$last_dirname = $dirname;
 	}
-
+	$i++;
+	$idx = str_pad($i, 3, '0', STR_PAD_LEFT);
 	$html = <<<HTML
 					<tr>
-						<th scope="row">{$filename}</th>
+						<td scope="row"><a href="https://github.com/dreamsxin/Budbud/raw/master/{$path}">{$idx} {$filename}</a></td>
 						<td>
 							<audio src="https://github.com/dreamsxin/Budbud/raw/master/{$path}" preload="none"></audio>
 						</td>
